@@ -1,0 +1,22 @@
+---
+title: "class_2018-10-29_real"
+author: "Meaghan Townsend"
+date: "October 29, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(devtools)
+library(tidyverse)
+library(knitr)
+```
+
+```{r}
+sotu <- read_csv("data/sou.csv")
+presidents <- read_csv("data/presidents.csv")
+
+sotu <- sotu %>%
+  left_join(presidents)
+```
+
